@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="javascripts/jquery.min.js"></script>
+  <script src="javascripts/scenario3.js"></script>
+  <script src="javascripts/web3.min.js"></script>
+  <link rel='stylesheet' href='stylesheets/style.css' />
+  <link rel='stylesheet' href='stylesheets/searchStyle.css' />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <script>
+    function GetMessage() {
+       myContract.methods.getMessage()
+        .call({ from: ethereum.selectedAddress })
+        .then((result) => {
+          console.log(result);
+         alert(result);
+        })
+    }
+  </script>
+</head>
+
+<body>
+    
+  <div style="text-align:center;">
+    <br /><br />
+    <img src="Logo.png" width="115" height="130">
+    <br /><br /><br />
+    <button onclick="connectToMetMask()" class="buttonZero" style="text-align: center;"><span>Login </span></button>
+  </div>
+    <button onclick="GetMessage()" class="searchButton">
+        <i class="fa fa-search"></i>
+    </button>
+</body>
+
+</html>
